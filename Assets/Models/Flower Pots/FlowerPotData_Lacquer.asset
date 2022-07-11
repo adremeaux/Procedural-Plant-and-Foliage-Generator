@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dfff6a5619d544b9b58cbe9512aa65, type: 3}
+  m_Name: FlowerPotData_Lacquer
+  m_EditorClassIdentifier: 
+  type: 1
+  modelPrefab: {fileID: 919132149155446097, guid: b06f116b97ba0e4439919dc40d359ef6, type: 3}
+  yAttachmentPos: 1.5

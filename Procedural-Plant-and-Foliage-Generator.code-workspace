@@ -1,0 +1,57 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "omnisharp.useModernNet": false,
+    "omnisharp.path": "",
+    "omnisharp.enableEditorConfigSupport": true,
+    "git.ignoreLimitWarning": true,
+    "editor.quickSuggestionsDelay": 100,
+    "editor.tabCompletion": "on",
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": "keyword.preprocessor",
+          "settings": {
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": "string.unquoted.preprocessor",
+          "settings": {
+            "fontStyle": "bold"
+          }
+        }
+      ]
+    },
+    "workbench.colorCustomizations": {
+      "editor.wordHighlightBackground": "#de820884",
+      "editor.selectionBackground": "#05753f",
+
+      "editorBracketHighlight.foreground1": "#c9aa91",
+      "editorBracketHighlight.foreground2": "#D4D4D4",
+      "editorBracketHighlight.foreground3": "#1c5e9500",
+      "editorBracketHighlight.foreground4": "#a1b0bd00",
+      "editorBracketHighlight.foreground5": "#1c5e9500",
+      "editorBracketHighlight.foreground6": "#1c5e9500",
+      "editorBracketHighlight.unexpectedBracket.foreground": "#ff1212cc",
+      "editorBracketMatch.background": "#0064001a",
+      "editorBracketMatch.border": "#888888",
+      "editorBracketPairGuide.activeBackground1": "#00000000",
+      "editorBracketPairGuide.activeBackground2": "#00000000",
+      "editorBracketPairGuide.activeBackground3": "#00000000",
+      "editorBracketPairGuide.activeBackground4": "#00000000",
+      "editorBracketPairGuide.activeBackground5": "#00000000",
+      "editorBracketPairGuide.activeBackground6": "#00000000",
+      "editorBracketPairGuide.background1": "#00000000",
+      "editorBracketPairGuide.background2": "#00000000",
+      "editorBracketPairGuide.background3": "#00000000",
+      "editorBracketPairGuide.background4": "#00000000",
+      "editorBracketPairGuide.background5": "#00000000",
+      "editorBracketPairGuide.background6": "#00000000"
+    }
+  }
+}
