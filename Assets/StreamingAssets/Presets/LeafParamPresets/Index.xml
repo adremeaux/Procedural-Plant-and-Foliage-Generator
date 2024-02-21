@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <string>Classic</string>
+  <string>Cool</string>
+  <string>Hybrids</string>
+  <string>SeedBank</string>
+  <string>StarterBases</string>
+  <string>Starters</string>
+  <string>Temporary</string>
+  <string>User</string>
+</ArrayOfString>

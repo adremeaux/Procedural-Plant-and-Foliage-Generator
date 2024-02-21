@@ -1,0 +1,415 @@
+{
+  "data": [
+    {
+      "collection": "Classic",
+      "plants": [
+        {
+          "name": "BabyPhilo",
+          "uniqueID": "638200235433659593-6ab72954-6dcb-4af3-8130-063b9e63b721",
+          "creationDate": "2023-05-17T13:04:07.4212315-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "BirdofParadise",
+          "uniqueID": "638200235433659593-4e5e1c1f-7433-497d-959f-0f3d0652f0dd",
+          "creationDate": "2023-05-16T13:04:07.4212315-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 1,
+          "propegating": false
+        },
+        {
+          "name": "BlackStrap",
+          "uniqueID": "638200235433659593-ac2c14e0-97c4-4189-a90c-50a374daf907",
+          "creationDate": "2023-05-11T13:04:07.4212315-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 2,
+          "propegating": false
+        },
+        {
+          "name": "Cuprea",
+          "uniqueID": "638200235433659593-d557468c-e365-49f5-a99e-9d6648dee2af",
+          "creationDate": "2023-05-12T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 2,
+          "propegating": false
+        },
+        {
+          "name": "Cyrtosperma",
+          "uniqueID": "638200235433659593-8d0bb947-a451-45e8-9393-9379d1cef0ee",
+          "creationDate": "2023-05-19T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 1,
+          "propegating": false
+        },
+        {
+          "name": "FLF",
+          "uniqueID": "638200235433659593-0a5a270b-5d91-461f-ac11-70ef6080589e",
+          "creationDate": "2023-04-17T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        },
+        {
+          "name": "Gloriosum",
+          "uniqueID": "638200235433659593-8d346960-1902-44fe-9973-126f6b2fd905",
+          "creationDate": "2023-01-17T12:04:07.4222333-05:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 1,
+          "propegating": false
+        },
+        {
+          "name": "PumpkinSmash",
+          "uniqueID": "638200235433659593-230e53a7-4e0b-429b-80be-e3ab3f1c386c",
+          "creationDate": "2023-03-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "SilverDragon",
+          "uniqueID": "638200235433659593-d4d24fa1-aba6-4419-8c3a-75494fa947cc",
+          "creationDate": "2023-05-15T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 1,
+          "propegating": false
+        },
+        {
+          "name": "Verrucosum",
+          "uniqueID": "638200235433659593-440063de-6c30-43d3-a51c-629aa5c18f2a",
+          "creationDate": "2022-05-17T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "Waroc",
+          "uniqueID": "638200235433659593-b3865c58-306a-49b4-a10d-3e2985e520fc",
+          "creationDate": "2021-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 2,
+          "propegating": false
+        },
+        {
+          "name": "zAlocasiaX",
+          "uniqueID": "638200235433659593-80e94b22-21df-4605-bb17-973c367639a6",
+          "creationDate": "2020-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Slimnib",
+          "hybridsRemaining": 1,
+          "propegating": false
+        },
+        {
+          "name": "zColocasiaPink",
+          "uniqueID": "638200235433659593-36d320db-0756-454c-9477-6face9ae75a1",
+          "creationDate": "2023-05-18T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        },
+        {
+          "name": "Paphiopedilum",
+          "uniqueID": "638200235433659593-4a28cbc6-d806-4847-b3d1-a131e87e60fe",
+          "creationDate": "2022-05-16T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        }
+      ]
+    },
+    {
+      "collection": "Starters",
+      "plants": [
+        {
+          "name": "Basic_ShortSkinny",
+          "uniqueID": "638200235433669603-525ce1d6-9aa5-4c95-9027-80ec8091572c",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        },
+        {
+          "name": "Basic_BigWide",
+          "uniqueID": "638200235433669603-f25bf6b3-1df4-4f59-a1e8-2ef561365d81",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": true,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        },
+        {
+          "name": "Basic_DarkPointy",
+          "uniqueID": "638200235433669603-5a777efc-0530-4383-b72e-c91f4c90bd15",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        },
+        {
+          "name": "StrongVeins",
+          "uniqueID": "638200235433682561-a3ff7835-6135-4838-84c6-b7aa5e71e9da",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 0,
+          "propegating": false
+        }
+      ]
+    },
+    {
+      "collection": "StarterBases",
+      "plants": [
+        {
+          "name": "LongGreen",
+          "uniqueID": "638200235433682561-c1a39f53-22c5-4ea8-a0cc-82129cd1344a",
+          "creationDate": "2013-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "MostBasic",
+          "uniqueID": "638200235433682561-bd3682de-4323-42e0-a099-ee8478e85bb1",
+          "creationDate": "2022-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "BroadBirdsNest",
+          "uniqueID": "638200235433682561-a0726cf1-636f-4728-9d33-d3f77a0176c5",
+          "creationDate": "2021-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongVeins",
+          "uniqueID": "638200235433682561-db8cd017-dd9a-442c-a955-46bf9eb14ad9",
+          "creationDate": "2023-04-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongMargins",
+          "uniqueID": "638200235433682561-a166ecc9-e672-4606-bb51-5c1db8cfe6d5",
+          "creationDate": "2023-05-16T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "Basic_ShortSkinny",
+          "uniqueID": "638200235433682561-a44568eb-f2cf-4763-be00-c23958bfec22",
+          "creationDate": "2023-05-11T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "Basic_BigWide",
+          "uniqueID": "638200235433682561-c687d2ff-8407-4f48-ae86-fa21e07a24be",
+          "creationDate": "2023-05-14T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "Basic_DarkPointy",
+          "uniqueID": "638200235433682561-296d82e8-b1bf-43c9-81ac-109b02ab3b08",
+          "creationDate": "2023-04-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongVeins",
+          "uniqueID": "638200235433682561-a3ff7835-6135-4838-84c6-b7aa5e71e9da",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        }
+      ]
+    },
+    {
+      "collection": "Hybrids",
+      "plants": [
+        {
+          "name": "FirstReq",
+          "uniqueID": "638200235433682561-70167903-5734-4e50-867d-b59369372501",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Slimnib",
+          "hybridsRemaining": 3,
+          "propegating": false
+        }
+      ]
+    },
+    {
+      "collection": "Temporary",
+      "plants": []
+    },
+    {
+      "collection": "Cool",
+      "plants": [
+        {
+          "name": "StrongVeinsxBroadBirdsNest6211",
+          "uniqueID": "638200235433697584-73c8492c-8336-45e0-921a-fdacf84dc39a",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "zAlocasiaXxCuprea4069",
+          "uniqueID": "638200235433697584-c0bcdced-dbe6-4323-bee7-16b3abb63e98",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "BlackStrapxzColocasiaPink9945",
+          "uniqueID": "638200235433697584-b5f3ba7d-dfc8-4273-a1b5-84066cce821a",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongMarginsxLongGreen7561",
+          "uniqueID": "638200235433697584-fd9547a0-f551-4050-9962-c0b1bb504999",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongVeinsxzColocasiaPink7090",
+          "uniqueID": "638200235433697584-a9ca4008-ac0f-4254-891a-257d25ae2fba",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "BroadBirdsNestxStrongVeins7296",
+          "uniqueID": "638200235433697584-d6d54149-1b10-4a40-a871-9cb868a9d649",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "WarocxStrongVeins6609",
+          "uniqueID": "638200235433697584-2797cd91-bdee-43e3-aa16-a2c91d32e65d",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongMarginsxStrongVeins1821",
+          "uniqueID": "638200235433697584-37ca0e52-ca7f-41d0-aef5-49fb2497a11d",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "StrongMarginsxStrongVeins1821xBirdofParadisexFLF21517569",
+          "uniqueID": "638200235433697584-53d60bc9-869a-40a4-9ebd-6531f501f69f",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "LongGreenxCuprea5961",
+          "uniqueID": "638200235433697584-8d4ff810-7bfc-474b-b7ce-7a86875d8b49",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "BroadBirdsNestxCuprea2593xBlackStrap777",
+          "uniqueID": "638200235433697584-81faff10-5851-4c3e-9ddc-74c27b9e5026",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "FLFxFLF5790",
+          "uniqueID": "638200235433697584-bbaedc35-66db-4f62-8f36-332a9553b104",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "Turtle",
+          "uniqueID": "638200235433697584-1df6a6d2-eeca-4a28-a8d4-ecbcef291c62",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        },
+        {
+          "name": "DinosaurEgg",
+          "uniqueID": "638200235433697584-ade35ecf-798d-4634-a161-94dd0dbf5962",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00",
+          "favorite": false,
+          "taggedNPC": "Ignore",
+          "hybridsRemaining": 3,
+          "propegating": false
+        }
+      ]
+    },
+    {
+      "collection": 0,
+      "plants": []
+    }
+  ]
+}

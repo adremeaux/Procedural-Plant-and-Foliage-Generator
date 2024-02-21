@@ -1,0 +1,194 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel DistortOnCurve
+
+#include "DistortionCurveData.hlsl"
+
+StructuredBuffer<float3> _BaseVertsRead;
+RWStructuredBuffer<float3> _DeltaVertsRW;
+
+StructuredBuffer<Curve3D> _InfluenceCurves;
+StructuredBuffer<float3> _DistortionPoints;
+StructuredBuffer<int> _DistortionOffsets; //count == dcData.Instances
+StructuredBuffer<Curve3D> _Midrib;
+StructuredBuffer<DistortionCurveData> _DCData;
+
+RWStructuredBuffer<float> _DebugFloat;
+RWStructuredBuffer<float3> _DebugFloat3;
+RWStructuredBuffer<Curve3D> _DebugCurve3D;
+
+uint _NumInflCurves() {
+    uint numStructs, stride;
+    _InfluenceCurves.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+uint _NumDistPoints() {
+    uint numStructs, stride;
+    _DistortionPoints.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+uint _NumBaseVerts() {
+    uint numStructs, stride;
+    _BaseVertsRead.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+
+bool _SoftEqualsAll(float v, float a, float b, float c) {
+    return abs(v - a) < .01 && abs(v - b) < .01 && abs(v - c) < .01;
+}
+
+float _GetClosestPointToCubicBezier(int iterations, float2 p, Curve3D curve, float start, float end, int slices)
+{
+    for (uint iter = iterations; iter >= 0; iter--) {
+        if (iter <= 0) {
+            return (start + end) / 2;
+        }
+        float tick = (end - start) / (float)slices;
+        float x, y, dx, dy;
+        float best = 0;
+        float bestDistance = 9999999;
+        float currentDistance;
+        float t = start;
+        while (t <= end * 1.01) {
+            x = (1 - t) * (1 - t) * (1 - t) * curve.p0.x + 3 * (1 - t) * (1 - t) * t * curve.h0.x + 3 * (1 - t) * t * t * curve.h1.x + t * t * t * curve.p1.x;
+            y = (1 - t) * (1 - t) * (1 - t) * curve.p0.y + 3 * (1 - t) * (1 - t) * t * curve.h0.y + 3 * (1 - t) * t * t * curve.h1.y + t * t * t * curve.p1.y;
+
+            dx = x - p.x;
+            dy = y - p.y;
+            dx *= dx;
+            dy *= dy;
+            currentDistance = dx + dy;
+            if (currentDistance < bestDistance) {
+                bestDistance = currentDistance;
+                best = t;
+            }
+            t += tick;
+        }
+        start = max(best - tick, 0);
+        end = min(best + tick, 1);
+    }
+    
+    return (start + end) / 2;
+}
+
+float3 _GetBezierPoint(float3 p0, float3 p1, float3 p2, float3 p3, float t) {
+    t = clamp(t, 0, 1);
+    float oneMinusT = 1 - t;
+    return
+        oneMinusT * oneMinusT * oneMinusT * p0 +
+        3 * oneMinusT * oneMinusT * t * p1 +
+        3 * oneMinusT * t * t * p2 +
+        t * t * t * p3;
+}
+
+float3 _GetPoint(Curve3D c, float p) {
+    if (p <= 0) return c.p0;
+    if (p >= 1) return c.p1;
+    return _GetBezierPoint(c.p0, c.h0, c.h1, c.p1, p); 
+}
+
+float _FindPointAlongCurve(float3 v, Curve3D c)
+{
+    if (_SoftEqualsAll(c.p0.x, c.p1.x, c.h0.x, c.h1.x))
+    {
+        return clamp((v.y - c.p0.y) / (c.p1.y - c.p0.y), 0, 1);
+    }
+    if (_SoftEqualsAll(c.p0.y, c.p1.y, c.h0.y, c.h1.y))
+    {
+        return clamp((v.x - c.p0.x) / (c.p1.x - c.p0.x), 0, 1);
+    }
+
+    //float a = clamp((v.y - c.p0.y) / (c.p1.y - c.p0.y), 0, 1);
+    float b = _GetClosestPointToCubicBezier(2, (float2)v, c, 0, 1, 10); //(int iterations, float2 p, Curve3D curve, float start, float end, int slices)
+    return b;
+}
+
+float _FindPointAlongDCs(float3 v) {
+    float minV = 9999999;
+    float minP = 0;
+    for (uint idx = 0; idx < _NumInflCurves(); idx++) {
+        float p = _FindPointAlongCurve(v, _InfluenceCurves[idx]);
+        float dist = distance(v, _GetPoint(_InfluenceCurves[idx], p));
+        if (dist < minV) {
+            minV = dist;
+            minP = (float)idx + p;
+        }
+    }
+    return minP;
+}
+
+float3 _NearestPointAlongInfluence(float p) {
+    float normalizedPoint = p;
+    int idx = (int)normalizedPoint;
+    uint numCurves = _NumInflCurves();
+    if (idx >= (int)numCurves) {
+        idx = numCurves - 1;
+    }
+    float finalPoint = normalizedPoint - (float)idx;
+    return _GetPoint(_InfluenceCurves[idx], finalPoint);
+}
+
+float3 _GetMagnetPoint(float pointAlong, uint offset) {
+    int distPointsPer = _NumDistPoints() / _DCData[0].instances; //UPDATE FOR WAVE!!!
+    float perc = pointAlong / (float)_NumInflCurves();
+    float extendedPerc = (float)(distPointsPer - 1) * perc;
+    int primaryIdx = (int)extendedPerc;
+    float lerpPoint = extendedPerc - (float)primaryIdx;
+    float3 p0 = _DistortionPoints[primaryIdx + offset];
+    float3 p1 = p0;
+    if (primaryIdx + 1 < distPointsPer) p1 = _DistortionPoints[primaryIdx + offset + 1];
+    return lerp(p0, p1, lerpPoint);
+}
+
+[numthreads(8,1,1)]
+void DistortOnCurve(uint3 id : SV_DispatchThreadID)
+{
+    uint baseVertsCount = _NumBaseVerts();
+    if (id.x >= baseVertsCount) return;
+    DistortionCurveData dcData = _DCData[0];
+
+    for (int instanceIdx = 0; instanceIdx < dcData.instances; instanceIdx++) {
+        float3 baseVert = _BaseVertsRead[id.x];
+        float pointAlong = _FindPointAlongDCs(baseVert);
+        float3 inflVert = _NearestPointAlongInfluence(pointAlong);
+        float midribClosestPoint = _GetClosestPointToCubicBezier(2, (float2)baseVert, _Midrib[0], 0, 1, 10);
+        float3 midribPoint = _GetPoint(_Midrib[0], midribClosestPoint);
+        float dist = distance(baseVert, inflVert);
+        float fade = 1;
+
+        if (dcData.shouldFade > 0) {
+            if (dcData.useDistFade > 0) {
+                fade = dist / (dcData.leafWidth / 2);
+                fade = min(fade, dcData.distClamp);
+                fade /= dcData.distClamp;
+                //if (dcData.isCup) vertDistances[i] = fade;
+            } else {
+                float span = distance(inflVert, midribPoint);
+                float propDist = dist / span;
+                fade = (min(propDist, dcData.maxFadeDist) /dcData.maxFadeDist);
+            }
+
+            if (dcData.reverseFade == 0) fade = 1 - fade;
+        } else {
+            //_DebugFloat[id.x] = 420;
+        }
+
+        uint totalPoints = _NumDistPoints();
+        uint magnetOffset = _DistortionOffsets[instanceIdx];
+        float3 magnet = _GetMagnetPoint(pointAlong, magnetOffset);
+        if (fade > 0.01 && (dcData.skipOutsideLowerBound == 0 || pointAlong > 0.01)) {
+            float3 deltaVert = float3((magnet.x - baseVert.x) * fade,
+                                    (magnet.y - baseVert.y) * fade,
+                                    (magnet.z - baseVert.z) * fade);
+            if ((dcData.affectAxes & 1) == 0) deltaVert = float3(0, deltaVert.y, deltaVert.z);
+            if ((dcData.affectAxes & 2) == 0) deltaVert = float3(deltaVert.x, 0, deltaVert.z);
+            if ((dcData.affectAxes & 4) == 0) deltaVert = float3(deltaVert.x, deltaVert.y, 0);
+
+            int idx = instanceIdx * baseVertsCount + id.x;
+            _DeltaVertsRW[idx] += deltaVert;
+            if (instanceIdx == 0) _DebugFloat3[id.x] = magnet;
+        }
+    }
+}

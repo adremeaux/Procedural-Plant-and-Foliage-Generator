@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PresetCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <collection>StarterBases</collection>
+  <plantNames>
+    <string>Long Green</string>
+    <string>Most Basic</string>
+    <string>Broad Bird's Nest</string>
+    <string>Strong Veins</string>
+    <string>Strong Margins</string>
+  </plantNames>
+</PresetCollection>

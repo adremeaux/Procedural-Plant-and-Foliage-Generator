@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "collection": 1,
+      "plantNames": [
+        "BabyPhilo",
+        "BirdofParadise",
+        "BlackStrap",
+        "Cuprea",
+        "Cyrtosperma",
+        "FLF",
+        "Gloriosum",
+        "PumpkinSmash",
+        "SilverDragon",
+        "Verrucosum",
+        "Waroc",
+        "zAlocasiaX",
+        "zColocasiaPink",
+        "Paphiopedilum"
+      ]
+    },
+    {
+      "collection": 20,
+      "plantNames": [
+        "Basic_ShortSkinny",
+        "Basic_BigWide",
+        "Basic_DarkPointy"
+      ]
+    },
+    {
+      "collection": 21,
+      "plantNames": [
+        "LongGreen",
+        "MostBasic",
+        "BroadBirdsNest",
+        "StrongVeins",
+        "StrongMargins",
+        "Basic_ShortSkinny",
+        "Basic_BigWide",
+        "Basic_DarkPointy"
+      ]
+    },
+    {
+      "collection": 100,
+      "plantNames": []
+    },
+    {
+      "collection": 200,
+      "plantNames": []
+    },
+    {
+      "collection": 300,
+      "plantNames": [
+        "StrongVeins"
+      ]
+    },
+    {
+      "collection": 999,
+      "plantNames": [
+        "StrongVeinsxBroadBirdsNest6211",
+        "zAlocasiaXxCuprea4069",
+        "BlackStrapxzColocasiaPink9945",
+        "StrongMarginsxLongGreen7561",
+        "StrongVeinsxzColocasiaPink7090",
+        "BroadBirdsNestxStrongVeins7296",
+        "WarocxStrongVeins6609",
+        "StrongMarginsxStrongVeins1821",
+        "StrongMarginsxStrongVeins1821xBirdofParadisexFLF21517569",
+        "LongGreenxCuprea5961",
+        "BroadBirdsNestxCuprea2593xBlackStrap777",
+        "FLFxFLF5790",
+        "Turtle",
+        "DinosaurEgg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PresetCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <collection>Classic</collection>
+  <plantNames>
+    <string>Baby Philo</string>
+    <string>Bird of Paradise</string>
+    <string>Black Strap</string>
+    <string>Cuprea</string>
+    <string>Cyrtosperma</string>
+    <string>FLF</string>
+    <string>Gloriosum</string>
+    <string>Pumpkin Smash</string>
+    <string>Silver Dragon</string>
+    <string>Verrucosum</string>
+    <string>Waroc</string>
+    <string>z Alocasia X</string>
+    <string>z Colocasia Pink</string>
+    <string>Paphiopedilum</string>
+  </plantNames>
+</PresetCollection>

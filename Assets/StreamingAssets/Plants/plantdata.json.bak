@@ -1,0 +1,256 @@
+{
+  "data": [
+    {
+      "collection": 1,
+      "plantNames": [
+        "BabyPhilo",
+        "BirdofParadise",
+        "BlackStrap",
+        "Cuprea",
+        "Cyrtosperma",
+        "FLF",
+        "Gloriosum",
+        "PumpkinSmash",
+        "SilverDragon",
+        "Verrucosum",
+        "Waroc",
+        "zAlocasiaX",
+        "zColocasiaPink",
+        "Paphiopedilum"
+      ],
+      "plants": [
+        {
+          "name": "BabyPhilo",
+          "creationDate": "2023-05-17T13:04:07.4212315-04:00"
+        },
+        {
+          "name": "BirdofParadise",
+          "creationDate": "2023-05-17T13:04:07.4212315-04:00"
+        },
+        {
+          "name": "BlackStrap",
+          "creationDate": "2023-05-17T13:04:07.4212315-04:00"
+        },
+        {
+          "name": "Cuprea",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Cyrtosperma",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "FLF",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Gloriosum",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "PumpkinSmash",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "SilverDragon",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Verrucosum",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Waroc",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "zAlocasiaX",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "zColocasiaPink",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Paphiopedilum",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        }
+      ]
+    },
+    {
+      "collection": 20,
+      "plantNames": [
+        "Basic_ShortSkinny",
+        "Basic_BigWide",
+        "Basic_DarkPointy"
+      ],
+      "plants": [
+        {
+          "name": "Basic_ShortSkinny",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Basic_BigWide",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Basic_DarkPointy",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        }
+      ]
+    },
+    {
+      "collection": 21,
+      "plantNames": [
+        "LongGreen",
+        "MostBasic",
+        "BroadBirdsNest",
+        "StrongVeins",
+        "StrongMargins",
+        "Basic_ShortSkinny",
+        "Basic_BigWide",
+        "Basic_DarkPointy"
+      ],
+      "plants": [
+        {
+          "name": "LongGreen",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "MostBasic",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "BroadBirdsNest",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "StrongVeins",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "StrongMargins",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Basic_ShortSkinny",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Basic_BigWide",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Basic_DarkPointy",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        }
+      ]
+    },
+    {
+      "collection": 100,
+      "plantNames": [
+        "FirstReq"
+      ],
+      "plants": [
+        {
+          "name": "FirstReq",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        }
+      ]
+    },
+    {
+      "collection": 200,
+      "plantNames": [],
+      "plants": []
+    },
+    {
+      "collection": 300,
+      "plantNames": [
+        "StrongVeins"
+      ],
+      "plants": [
+        {
+          "name": "StrongVeins",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        }
+      ]
+    },
+    {
+      "collection": 999,
+      "plantNames": [
+        "StrongVeinsxBroadBirdsNest6211",
+        "zAlocasiaXxCuprea4069",
+        "BlackStrapxzColocasiaPink9945",
+        "StrongMarginsxLongGreen7561",
+        "StrongVeinsxzColocasiaPink7090",
+        "BroadBirdsNestxStrongVeins7296",
+        "WarocxStrongVeins6609",
+        "StrongMarginsxStrongVeins1821",
+        "StrongMarginsxStrongVeins1821xBirdofParadisexFLF21517569",
+        "LongGreenxCuprea5961",
+        "BroadBirdsNestxCuprea2593xBlackStrap777",
+        "FLFxFLF5790",
+        "Turtle",
+        "DinosaurEgg"
+      ],
+      "plants": [
+        {
+          "name": "StrongVeinsxBroadBirdsNest6211",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "zAlocasiaXxCuprea4069",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "BlackStrapxzColocasiaPink9945",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "StrongMarginsxLongGreen7561",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "StrongVeinsxzColocasiaPink7090",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "BroadBirdsNestxStrongVeins7296",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "WarocxStrongVeins6609",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "StrongMarginsxStrongVeins1821",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "StrongMarginsxStrongVeins1821xBirdofParadisexFLF21517569",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "LongGreenxCuprea5961",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "BroadBirdsNestxCuprea2593xBlackStrap777",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "FLFxFLF5790",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "Turtle",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        },
+        {
+          "name": "DinosaurEgg",
+          "creationDate": "2023-05-17T13:04:07.4222333-04:00"
+        }
+      ]
+    }
+  ]
+}

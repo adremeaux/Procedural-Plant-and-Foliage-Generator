@@ -1,0 +1,257 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &848574990220217767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8065026276617574378}
+  - component: {fileID: 847768001533668584}
+  - component: {fileID: 7213879153518339165}
+  m_Layer: 0
+  m_Name: PlantPhysicsSimulator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8065026276617574378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848574990220217767}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1355286611862412733}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &847768001533668584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848574990220217767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &7213879153518339165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848574990220217767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000e96e195f341a44ae82136d05fc465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshCollider: {fileID: 847768001533668584}
+  debugMeshFilter: {fileID: 0}
+  scaler: {fileID: 7447198727836946517}
+--- !u!1 &1355286611862412729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1355286611862412733}
+  - component: {fileID: 1355286611862412735}
+  - component: {fileID: 1355286611862412734}
+  m_Layer: 0
+  m_Name: PlantPrefab
+  m_TagString: Plant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1355286611862412733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355286611862412729}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7447198727836946517}
+  - {fileID: 8065026276617574378}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355286611862412735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355286611862412729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b3c261dc3853244960e872ec0144ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leafName: Prefab
+  bundlePrefab: {fileID: 1288616654005209749, guid: 15e5dfd6ef743e6418fd23fd5cc42d91, type: 3}
+  trunkPrefab: {fileID: 1288616654005209749, guid: 71d5aeca86be8674ca777028b5a791bc, type: 3}
+  scaler: {fileID: 7447198727836946517}
+  physicsSim: {fileID: 7213879153518339165}
+  computeShaderDistort: {fileID: 7200000, guid: 0c00e7c98886b3646ba437a8a5a856cf, type: 3}
+  computeShaderExtrude: {fileID: 7200000, guid: 501dd7c8f7fad444fb67843c0910667d, type: 3}
+  computeShaderNormals: {fileID: 7200000, guid: cc98a80e4e468a24abd1052c68e5dbbe, type: 3}
+  deps:
+    leafData:
+      randomSeed: 0
+    baseParams:
+      BaseHeight: -3
+      BaseWidth: 1
+      RenderLineSteps: 16
+      SubdivSteps: 0
+      VeinLineSteps: 10
+      CustomMeshDensity: 16
+      TriangulateWithInnerVerts: 0
+      TextureSize: 1024
+      TextureDownsample: 1
+      NormalSupersample: 1
+      DistortionInstances: 3
+      LinearPointsIncr: 0.5
+      HideTrunk: 0
+      HideDistortion: 0
+      SkipPhysics: 0
+      RandomBS: 34
+    inspector:
+      showSmooth: 0
+      showApprox: 0
+      showApproxVerts: 0
+      showHandles: 0
+      showIntersections: 0
+      showLinearPoints: 0
+      showVeins: 0
+      showVeinHandles: 0
+      showGravityCurve: 0
+      showVeinPolys: 0
+      showDistortionCurves: 0
+      showStem: 0
+      showBoundingBox: 0
+      showSwatches: 1
+      showVertexNormals: 0
+      showSurfaceNormals: 0
+    logOptions:
+      logAngles: 0
+      logApexCalcs: 0
+      logOnDrag: 0
+      logPudge: 0
+      logLengthCalcs: 0
+      logTextureSplits: 0
+  needsInspectorRedraw: 0
+  isInstantiated: 0
+  viewAsPlant: 1
+  renderingEnabled: 1
+  isHybridizing: 0
+  collection: 0
+  fields:
+    keyData: 
+    valueData: []
+  potType: 0
+  displayMode: 7
+  currentRenderQuality: 0
+  lightLayers: 3
+  cachedCommandStrings:
+    keyData: 00000000020000000300000001000000
+    valueData:
+    - keyData:
+      - enabled
+      valueData: 01
+    - keyData:
+      - enabled
+      valueData: 01
+    - keyData:
+      - enabled
+      valueData: 01
+    - keyData:
+      - IMTextureCmdDrawColor
+      - IMTextureCmdDrawPuffyNormals
+      - IMTextureCmdDrawPrimaryVeinsNormals
+      - IMTextureCmdDrawTestNormals
+      - enabled
+      valueData: 0101010001
+--- !u!114 &1355286611862412734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355286611862412729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9b7a1dfc259da46a16d1c4d9665daa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swatchesContainer: {fileID: 0}
+  prefab_Swatch: {fileID: 1368944965140526009, guid: 35631350b2fd0d04484532275da3fe59, type: 3}
+--- !u!1 &7775744667614082199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7447198727836946517}
+  - component: {fileID: 3184958236325027933}
+  m_Layer: 0
+  m_Name: Scaler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7447198727836946517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775744667614082199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1355286611862412733}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3184958236325027933
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775744667614082199}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -1,0 +1,97 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel ExtrudeMesh
+#pragma kernel CreateBackTriangles
+#pragma kernel CreateEdgeTriangles
+
+RWStructuredBuffer<float3> _VertsRW;
+StructuredBuffer<int> _OrderedEdges;
+RWStructuredBuffer<int> _TrianglesRW;
+RWStructuredBuffer<float2> _UVsRW;
+RWStructuredBuffer<float4> _ColorsRW;
+RWStructuredBuffer<float3> _NormalsRW;
+RWStructuredBuffer<float3> _DeltaVerts;
+
+RWStructuredBuffer<float> _DebugFloat;
+RWStructuredBuffer<float3> _DebugFloat3;
+
+float _EdgeDepth;
+float _SuccThicc;
+float _BaseTrisCount;
+
+uint _VertsRWCount() {
+    uint numStructs, stride;
+    _VertsRW.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+uint _OrdEdgeCount() {
+    uint numStructs, stride;
+    _OrderedEdges.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+[numthreads(8,1,1)]
+void ExtrudeMesh(uint3 id : SV_DispatchThreadID)
+{
+    int baseCount = _VertsRWCount() / 2;
+    if ((int)id.x >= baseCount) return;
+    int pos = id.x;
+    int newPos = id.x + baseCount;
+
+        //set Colors and UVs
+    _ColorsRW[pos] = float4(1, 1, 1, 1);
+    _ColorsRW[newPos] = float4(0, 0, 0, 1);
+    _UVsRW[newPos] = _UVsRW[pos];
+    
+        //create back vertices and translate
+    float z = 0.02f + (_EdgeDepth * .1);
+    //VERT DISTANCES!
+    //float dist = _VertDistances[id.x];
+    //z += (.5 * _SuccThicc * dist);
+    float3 baseVert = _VertsRW[pos];
+    _VertsRW[newPos] = float3(baseVert.x, baseVert.y, baseVert.z + z);
+}
+
+[numthreads(8,1,1)]
+void CreateBackTriangles(uint id : SV_DispatchThreadID)
+{
+    if ((int)id.x >= _BaseTrisCount) return;
+    int baseVertsCount = _VertsRWCount() / 2;
+    int pos = id.x;
+    int newPos = _BaseTrisCount + (_BaseTrisCount - pos - 1); //63 + (63 - [0..62] - 1) = 63 + (6
+
+        //create and reverse rear tris
+    _TrianglesRW[newPos] = _TrianglesRW[pos] + baseVertsCount;
+}
+
+[numthreads(8,1,1)]
+void CreateEdgeTriangles(uint id : SV_DispatchThreadID)
+{
+    // return;
+    int ordEdgeCount = _OrdEdgeCount();
+    if ((int)id.x >= ordEdgeCount) return;
+    int baseVertsCount = _VertsRWCount() / 2;
+    int offset = _BaseTrisCount * 2;
+    int edgePos = id.x;
+    int triPos = offset + (edgePos * 6 * 2);
+
+    int e = _OrderedEdges[edgePos];
+    int f = _OrderedEdges[edgePos+1];
+    if ((int)id.x == ordEdgeCount - 1) f = _OrderedEdges[0];
+    _TrianglesRW[triPos] = e;
+    _TrianglesRW[triPos+1] = e + baseVertsCount;
+    _TrianglesRW[triPos+2] = f;
+
+    _TrianglesRW[triPos+3] = f;
+    _TrianglesRW[triPos+4] = e + baseVertsCount;
+    _TrianglesRW[triPos+5] = f + baseVertsCount;
+
+     //face the other way too because I can't figure it out
+    _TrianglesRW[triPos+6] = e + baseVertsCount;
+    _TrianglesRW[triPos+7] = e;
+    _TrianglesRW[triPos+8] = f;
+
+    _TrianglesRW[triPos+9] = e + baseVertsCount;
+    _TrianglesRW[triPos+10] = f;
+    _TrianglesRW[triPos+11] = f + baseVertsCount;
+}

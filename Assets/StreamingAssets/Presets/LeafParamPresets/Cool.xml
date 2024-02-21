@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PresetCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <collection>Cool</collection>
+  <plantNames>
+    <string>Bird of Paradise x FLF 2151</string>
+    <string>Strong Veins x Broad Bird's Nest 6211</string>
+    <string>z Alocasia X x Cuprea 4069</string>
+    <string>Black Strap x z Colocasia Pink 9945</string>
+    <string>Strong Margins x Long Green 7561</string>
+    <string>Strong Veins x z Colocasia Pink 7090</string>
+    <string>Broad Bird's Nest x Strong Veins 7296</string>
+    <string>Waroc x Strong Veins 6609</string>
+    <string>Strong Margins x Strong Veins 1821</string>
+    <string>Strong Margins x Strong Veins 1821 x Bird of Paradise x FLF 2151 7569</string>
+    <string>Long Green x Cuprea 5961</string>
+    <string>Broad Bird's Nest x Cuprea 2593 x Black Strap 777</string>
+    <string>FLF x FLF 5790</string>
+    <string>Turtle</string>
+    <string>Dinosaur Egg</string>
+  </plantNames>
+</PresetCollection>

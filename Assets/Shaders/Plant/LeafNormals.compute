@@ -1,0 +1,98 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CalculateSurfaceNormals
+#pragma kernel CalculateVertexNormals
+
+StructuredBuffer<float3> _Verts;
+StructuredBuffer<int> _Triangles;
+StructuredBuffer<float3> _DeltaVerts;
+RWStructuredBuffer<float3> _SurfaceNormalsRW;
+RWStructuredBuffer<float3> _SurfaceCentersRW;
+RWStructuredBuffer<float3> _VertexNormalsRW;
+
+RWStructuredBuffer<float3> _DebugFloat;
+RWStructuredBuffer<float3> _DebugFloat3;
+
+float _Instances;
+
+uint VertsCount() {
+    uint numStructs, stride;
+    _Verts.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+uint NormalsCount() {
+    uint numStructs, stride;
+    _SurfaceNormalsRW.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+uint TrisCount() {
+    uint numStructs, stride;
+    _Triangles.GetDimensions(numStructs, stride);
+    return numStructs;
+}
+
+[numthreads(8,1,1)]
+void CalculateSurfaceNormals(uint3 id: SV_DispatchThreadID)
+{
+    uint instances = (uint)_Instances;
+    uint trisOffset = id.x * 3;
+    uint baseCount = VertsCount();
+    uint normalsCount = NormalsCount() / instances;
+    
+    for (uint i = 0; i < instances; i++) {
+        uint offset = baseCount * i;
+        uint p0i = _Triangles[trisOffset];
+        float3 p0 = _Verts[p0i] + _DeltaVerts[p0i + offset];
+
+        uint p1i = _Triangles[trisOffset + 1];
+        float3 p1 = _Verts[p1i] + _DeltaVerts[p1i + offset];
+
+        uint p2i = _Triangles[trisOffset + 2];
+        float3 p2 = _Verts[p2i] + _DeltaVerts[p2i + offset];
+
+        uint surfaceOffset = normalsCount * i;
+        _SurfaceCentersRW[id.x + surfaceOffset] = (p0 + p1 + p2) / 3;
+        _SurfaceNormalsRW[id.x + surfaceOffset] = normalize(cross(p1 - p0, p2 - p0));
+    }
+}
+
+bool IsEqual(float3 a, float3 b) {
+    return a.x == b.x && a.y == b.y && a.z == b.z;
+}
+
+[numthreads(8,1,1)]
+void CalculateVertexNormals(uint3 id: SV_DispatchThreadID)
+{
+    uint instances = (uint)_Instances;
+    uint trisCount = TrisCount();
+    uint baseVertsCount = VertsCount();
+    uint baseNormsCount = NormalsCount() / instances;
+    uint limit = 8;
+
+    for (uint i = 0; i < instances; i++) {
+        int vertIdx = id.x;
+        float3 vert = _Verts[id.x];
+
+        float3 normalsSum = float3(0, 0, 0);
+
+        uint faceCount = 0;
+        uint surfaceOffset = i * baseNormsCount;
+        for (uint triIdx = 0; triIdx < trisCount; triIdx += 3) {
+            if (_Triangles[(int)triIdx] == vertIdx || _Triangles[triIdx + 1] == vertIdx || _Triangles[triIdx + 2] == vertIdx) {
+                normalsSum += _SurfaceNormalsRW[triIdx / 3 + surfaceOffset];
+                faceCount++;
+                if (faceCount >= limit) break;
+            }
+        }
+
+        uint vertOffset = i * baseVertsCount;
+        uint target = id.x + vertOffset;
+        if (faceCount > 0) _VertexNormalsRW[target] = normalsSum / faceCount;
+        else _VertexNormalsRW[target] = float3(0, 0, -1);
+        
+        if (i == 0) _DebugFloat3[id.x] = float3(target, 0, 0);
+        else if (i == 1) _DebugFloat3[id.x] = float3( _DebugFloat3[id.x].x, target, 0);
+        else if (i == 2)  _DebugFloat3[id.x] = float3( _DebugFloat3[id.x].x,  _DebugFloat3[id.x].y, target);
+    }
+}
